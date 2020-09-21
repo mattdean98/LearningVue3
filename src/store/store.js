@@ -1,8 +1,22 @@
 import { reactive, computed } from "vue";
 
-export const store = reactive({
+const state = {
   dice: 0,
   rolls: [],
+};
+
+const actions = {
+  roll() {
+    store.dice = Math.floor(Math.random() * Math.floor(5)) + 1;
+    store.rolls.unshift(store.dice);
+  },
+  reset() {
+    store.dice = 0;
+    store.rolls = [];
+  },
+};
+
+const getters = {
   total: computed(() => {
     let temp = 0;
     store.rolls.forEach((roll) => {
@@ -13,12 +27,10 @@ export const store = reactive({
   count: computed(() => {
     return store.rolls.length;
   }),
-  roll() {
-    store.dice = Math.floor(Math.random() * Math.floor(5)) + 1;
-    store.rolls.unshift(store.dice);
-  },
-  reset() {
-    store.dice = 0;
-    store.rolls = [];
-  },
+};
+
+export const store = reactive({
+  ...state,
+  ...actions,
+  ...getters,
 });
