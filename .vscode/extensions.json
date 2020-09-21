@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "octref.vetur",
+    "esbenp.prettier-vscode",
+    "aaron-bond.better-comments",
+    "eamodio.gitlens"
+  ]
+}

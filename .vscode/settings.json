@@ -1,0 +1,11 @@
+{
+  "editor.formatOnSave": true,
+  "editor.minimap.maxColumn": 80,
+  "html.format.wrapLineLength": 80,
+  "vetur.format.defaultFormatter.html": "prettier",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.useTabStops": false,
+  "editor.tabSize": 2,
+  "html.format.indentHandlebars": true,
+  "html.format.wrapAttributes": "force-aligned"
+}
