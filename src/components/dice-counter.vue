@@ -4,11 +4,12 @@
 
 <script>
 import { reactive, ref, computed, toRefs } from "vue";
-import { store } from "../store/store";
+import { sixDiceStore } from "../store/sixDiceStore";
+
 export default {
   name: "dice-counter",
   data() {
-    return store;
+    return sixDiceStore;
   },
 };
 </script>

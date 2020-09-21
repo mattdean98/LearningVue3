@@ -7,29 +7,29 @@ const state = {
 
 const actions = {
   roll() {
-    store.dice = Math.floor(Math.random() * Math.floor(5)) + 1;
-    store.rolls.unshift(store.dice);
+    sixDiceStore.dice = Math.floor(Math.random() * Math.floor(5)) + 1;
+    sixDiceStore.rolls.unshift(sixDiceStore.dice);
   },
   reset() {
-    store.dice = 0;
-    store.rolls = [];
+    sixDiceStore.dice = 0;
+    sixDiceStore.rolls = [];
   },
 };
 
 const getters = {
   total: computed(() => {
     let temp = 0;
-    store.rolls.forEach((roll) => {
+    sixDiceStore.rolls.forEach((roll) => {
       temp += roll;
     });
     return temp;
   }),
   count: computed(() => {
-    return store.rolls.length;
+    return sixDiceStore.rolls.length;
   }),
 };
 
-export const store = reactive({
+export const sixDiceStore = reactive({
   ...state,
   ...actions,
   ...getters,
